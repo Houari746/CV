@@ -1,45 +1,171 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV de Houari Chafi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        /* --- RESET --- */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
             color: #333;
         }
+
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
-        h1, h2 {
-            color: #007BFF;
+
+        h1 {
+            font-size: 2.8rem;
+            color: #007bff;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 10px;
         }
-        .section {
+
+        h2 {
+            font-size: 1.6rem;
+            color: #555;
+            text-align: center;
+            font-weight: 400;
             margin-bottom: 20px;
         }
-        .contacts, .skills, .interests {
-            list-style: none;
-            padding: 0;
+
+        h3 {
+            font-size: 1.2rem;
+            color: #007bff;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
-        .contacts li, .skills li, .interests li {
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .contacts li,
+        .skills li,
+        .interests li {
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .contacts li::before,
+        .skills li::before,
+        .interests li::before {
+            content: "•";
+            color: #007bff;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* --- Flexbox Layout --- */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .col {
+            flex: 1;
+            min-width: 250px;
+            max-width: 45%;
+            margin-bottom: 20px;
+        }
+
+        /* --- Responsiveness --- */
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+
+            .col {
+                max-width: 100%;
+            }
+        }
+
+        /* --- Card Style for Sections --- */
+        .card {
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        /* --- Animations --- */
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .skills li,
+        .interests li {
+            background-color: #e9ecef;
+            border-radius: 5px;
+            padding: 8px;
             margin: 5px 0;
+        }
+
+        .skills li:hover,
+        .interests li:hover {
+            background-color: #007bff;
+            color: white;
+            transform: scale(1.05);
+            transition: all 0.2s ease;
         }
     </style>
 </head>
+
 <body>
-    <div class="container">
+    <div class="container fade-in">
         <h1>Houari Chafi</h1>
         <h2>Étudiant en BTS Informatique (SIO)</h2>
 
+        <!-- Contacts Section -->
         <div class="section">
             <h3>Contacts</h3>
             <ul class="contacts">
@@ -49,55 +175,63 @@
             </ul>
         </div>
 
-        <div class="section">
-            <h3>Parcours</h3>
-            <ul>
-                <li>Baccalauréat Technologique STMG (spécialité gestion finance) - Mention Assez bien (2022 - 2023)</li>
-                <li>Étudiant en BTS Informatique (SIO) au lycée Turgot (2024 - Présent)</li>
-            </ul>
+        <!-- Main content divided into two columns -->
+        <div class="row">
+            <div class="col">
+                <div class="card fade-in">
+                    <h3>Parcours</h3>
+                    <ul>
+                        <li>Baccalauréat Technologique STMG (spécialité gestion finance) - Mention Assez bien (2022 - 2023)</li>
+                        <li>Étudiant en BTS Informatique (SIO) au lycée Turgot (2024 - Présent)</li>
+                    </ul>
+                </div>
+                <div class="card fade-in">
+                    <h3>Expériences</h3>
+                    <ul>
+                        <li>Stage de 3e en pharmacie pendant la période du Covid-19</li>
+                        <li>Stage en informatique</li>
+                        <li>Organisateur d’événements (ex : fête de la musique, été 2024)</li>
+                        <li>Auto-entrepreneur chez Roalmer (missions d’enquêtes auprès de l’entreprise)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card fade-in">
+                    <h3>Savoir-faire</h3>
+                    <ul class="skills">
+                        <li>Base en HTML/CSS</li>
+                        <li>Base de données/SQL (MySQL)</li>
+                        <li>Hygiène informatique</li>
+                        <li>Réseau et système</li>
+                    </ul>
+                </div>
+                <div class="card fade-in">
+                    <h3>Savoir-être</h3>
+                    <ul>
+                        <li>Rigoureux</li>
+                        <li>Assidu</li>
+                        <li>Autonome</li>
+                        <li>Capacité à travailler en équipe</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
+        <!-- Additional sections -->
         <div class="section">
-            <h3>Expériences</h3>
-            <ul>
-                <li>Stage de 3e en pharmacie pendant la période du Covid-19</li>
-                <li>Stage en informatique</li>
-                <li>Organisateur d’événements (ex : fête de la musique, été 2024)</li>
-                <li>Auto-entrepreneur chez Roalmer (missions d’enquêtes auprès de l’entreprise)</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h3>Savoir-faire</h3>
-            <ul class="skills">
-                <li>Base en HTML/CSS</li>
-                <li>Base de données/SQL (MySQL)</li>
-                <li>Hygiène informatique</li>
-                <li>Réseau et système</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h3>Savoir-être</h3>
-            <ul>
-                <li>Rigoureux</li>
-                <li>Assidu</li>
-                <li>Autonome</li>
-                <li>Capacité à travailler en équipe</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h3>Certification</h3>
+            <h3>Certifications</h3>
             <ul>
                 <li>Linux</li>
                 <li>Cisco Packet Tracer</li>
                 <li>Pix</li>
             </ul>
         </div>
+
         <div class="section">
             <h3>Compétences</h3>
             <ul>
+                <h4>Code</h4>
                 <li>PHP</li>
                 <li>VirtualBox Studio</li>
                 <li>SQL</li>
@@ -107,89 +241,27 @@
                 <li>Bash</li>
                 <li>Github</li>
                 <li>Javascript</li>
-                <li>Phyton</li>
+                <li>Python</li>
                 <li>Debian</li>
+                <h4>Reseau</h4>
                 <li>Windows 10</li>
                 <li>Cisco Packet Tracer</li>
-                 <li>Ubuntu</li>
+                <li>Ubuntu</li>
                 <li>PHPMyAdmin</li>
                 <li>SQLite</li>
-                <li>Gestion de projet</li>
-                <li>Adresse IP</li>
-                <li>Infrastructure Reseau</li>
-                <li>Script Automatiser</li>
-                <li>Plan d'adressage reseau</li>
-                <li>PowerShell</li>
-                <li>SSH</li>
-                <li>Kanboard</li>
-                
-                
             </ul>
         </div>
 
         <div class="section">
-            <h3>Virtualisation</h3>
-            <ul>
-                <li>Windows</li>
-                <li>VirtualBox Studio</li>
-                <li>Ubuntu</li>
-                <li>Debian</li>
-                
-            </ul>
-        </div>
-
-        <div class="section">
-            <h3>CEJM/MSDGN</h3>
-            <ul>
-                <li>Contrat</li>
-                <li>Marché</li>
-                <li>Creation d'entreprise</li>
-                <li>Approche Marketing</li>
-                <li>Etudes de Marché</li>
-                <li>Veille Marketing</li>
-                <li>buisness Model/li>
-                <li>Ressources humaines : gestion prévisionnelle des emplois et des compétences (GPEC)/li>
-                
-                
-            </ul>
-        </div>
-
-        <div class="section">
-            <h3>Veille</h3>
-            <ul>
-                <li>3D</li>
-                <li>Cybersécurité</li>
-                <li>Jeux vidéo</li>
-                
-                
-            </ul>
-        </div>
-
-        <div class="section">
-            <h3>Langue</h3>
-            <ul>
-                <li>Anglais B1</li>
-                <li>Espagnol A2 </li>
-               
-                
-                
-            </ul>
-        </div>
-
-        
-        
-
-        <div class="section">
-            <h3>Centre d’intérêt</h3>
+            <h3>Centres d’intérêt</h3>
             <ul class="interests">
-                <li>Lectures (Manga, Roman)</li>
+                <li>Lectures (Manga, Romans)</li>
                 <li>Sport (Football, Judo)</li>
                 <li>Jeux vidéo</li>
                 <li>3D (novice en Blender)</li>
             </ul>
         </div>
-
-        
     </div>
 </body>
+
 </html>
