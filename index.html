@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV de Houari Chafi</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://www.example.com/favicon.ico"> <!-- Remplace par ton logo si nécessaire -->
     <style>
         /* --- RESET --- */
         * {
@@ -18,6 +19,7 @@
             font-family: 'Roboto', sans-serif;
             background-color: #f0f2f5;
             color: #333;
+            line-height: 1.6;
         }
 
         .container {
@@ -25,29 +27,30 @@
             margin: 40px auto;
             padding: 30px;
             background: white;
-            border-radius: 10px;
+            border-radius: 15px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
 
         h1 {
-            font-size: 2.8rem;
-            color: #007bff;
+            font-size: 3rem;
+            color: #0056b3;
             font-weight: 600;
             text-align: center;
             margin-bottom: 10px;
         }
 
         h2 {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             color: #555;
             text-align: center;
             font-weight: 400;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
 
         h3 {
-            font-size: 1.2rem;
-            color: #007bff;
+            font-size: 1.3rem;
+            color: #0056b3;
             margin-bottom: 15px;
             text-transform: uppercase;
             font-weight: 600;
@@ -72,21 +75,21 @@
         .skills li,
         .interests li {
             position: relative;
-            padding-left: 25px;
+            padding-left: 30px;
+            margin-bottom: 10px;
         }
 
         .contacts li::before,
         .skills li::before,
         .interests li::before {
             content: "•";
-            color: #007bff;
-            font-size: 1.5rem;
+            color: #0056b3;
+            font-size: 1.8rem;
             position: absolute;
             left: 0;
             top: 0;
         }
 
-        /* --- Flexbox Layout --- */
         .row {
             display: flex;
             flex-wrap: wrap;
@@ -98,17 +101,6 @@
             min-width: 250px;
             max-width: 45%;
             margin-bottom: 20px;
-        }
-
-        /* --- Responsiveness --- */
-        @media (max-width: 768px) {
-            .row {
-                flex-direction: column;
-            }
-
-            .col {
-                max-width: 100%;
-            }
         }
 
         /* --- Card Style for Sections --- */
@@ -123,6 +115,19 @@
         .card:hover {
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             transform: translateY(-5px);
+        }
+
+        .card-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .card-header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #0056b3;
         }
 
         /* --- Animations --- */
@@ -142,6 +147,31 @@
             }
         }
 
+        /* --- Responsiveness --- */
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+
+            .col {
+                max-width: 100%;
+            }
+        }
+
+        /* --- Custom Icons --- */
+        .contact-icon,
+        .skill-icon,
+        .interest-icon {
+            font-size: 1.4rem;
+            color: #0056b3;
+            margin-right: 10px;
+        }
+
+        .card-header p {
+            color: #0056b3;
+            font-size: 1.1rem;
+        }
+
         .skills li,
         .interests li {
             background-color: #e9ecef;
@@ -157,6 +187,21 @@
             transform: scale(1.05);
             transition: all 0.2s ease;
         }
+
+        .button {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 
@@ -165,13 +210,17 @@
         <h1>Houari Chafi</h1>
         <h2>Étudiant en BTS Informatique (SIO)</h2>
 
-        <!-- Contacts Section -->
+        <!-- Image and Contacts Section -->
         <div class="section">
+            <div class="card-header">
+                <img src="https://www.example.com/profile-pic.jpg" alt="Photo de profil">
+                <p>Voici mon CV en ligne, n'hésitez pas à me contacter pour toute opportunité professionnelle !</p>
+            </div>
             <h3>Contacts</h3>
             <ul class="contacts">
-                <li>Adresse : Rue Paul Eluard 91700</li>
-                <li>Téléphone : +33 06 52 46 70 26</li>
-                <li>Email : houarichafi@yahoo.com</li>
+                <li><i class="contact-icon">📍</i>Adresse : Rue Paul Eluard 91700</li>
+                <li><i class="contact-icon">📞</i>Téléphone : +33 06 52 46 70 26</li>
+                <li><i class="contact-icon">📧</i>Email : houarichafi@yahoo.com</li>
             </ul>
         </div>
 
@@ -200,10 +249,10 @@
                 <div class="card fade-in">
                     <h3>Savoir-faire</h3>
                     <ul class="skills">
-                        <li>Base en HTML/CSS</li>
-                        <li>Base de données/SQL (MySQL)</li>
-                        <li>Hygiène informatique</li>
-                        <li>Réseau et système</li>
+                        <li><i class="skill-icon">💻</i>Base en HTML/CSS</li>
+                        <li><i class="skill-icon">🗃️</i>Base de données/SQL (MySQL)</li>
+                        <li><i class="skill-icon">🔒</i>Hygiène informatique</li>
+                        <li><i class="skill-icon">🌐</i>Réseau et système</li>
                     </ul>
                 </div>
                 <div class="card fade-in">
@@ -243,7 +292,7 @@
                 <li>Javascript</li>
                 <li>Python</li>
                 <li>Debian</li>
-                <h4>Reseau</h4>
+                <h4>Réseau</h4>
                 <li>Windows 10</li>
                 <li>Cisco Packet Tracer</li>
                 <li>Ubuntu</li>
@@ -255,11 +304,15 @@
         <div class="section">
             <h3>Centres d’intérêt</h3>
             <ul class="interests">
-                <li>Lectures (Manga, Romans)</li>
-                <li>Sport (Football, Judo)</li>
-                <li>Jeux vidéo</li>
-                <li>3D (novice en Blender)</li>
+                <li><i class="interest-icon">📚</i>Lectures (Manga, Romans)</li>
+                <li><i class="interest-icon">⚽</i>Sport (Football, Judo)</li>
+                <li><i class="interest-icon">🎮</i>Jeux vidéo</li>
+                <li><i class="interest-icon">🎨</i>3D (novice en Blender)</li>
             </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="mailto:houarichafi@yahoo.com" class="button">Contactez-moi</a>
         </div>
     </div>
 </body>
